@@ -2,12 +2,14 @@ package com.example.demo.model;
 
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Role {
   private UUID id;
   private String roleName=new String();
 
   //role constructor
-  public Role(UUID id, String roleName) {
+  public Role(@JsonProperty("roleId") UUID id,@JsonProperty("roleName") String roleName) {
 	super();
 	this.id = id;
 	this.roleName = roleName;

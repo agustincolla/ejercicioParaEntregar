@@ -1,5 +1,9 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
+import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -19,5 +23,13 @@ public class RoleService {
    //add a role
    public int addRole(Role role) {
 	   return roleDao.insertRole(role);
+   }
+   //return all roles
+   public ArrayList<Role> getAllRole(){
+	   return roleDao.selectAllRole();
+   }
+   //return role by id
+   public Optional<Role> getRoleByID(UUID id){
+	   return roleDao.selectRoleById(id);
    }
 }
