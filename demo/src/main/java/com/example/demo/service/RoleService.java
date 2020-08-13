@@ -32,4 +32,12 @@ public class RoleService {
    public Optional<Role> getRoleByID(UUID id){
 	   return roleDao.selectRoleById(id);
    }
+   //delete a role by id
+   public int deleteRoleById(UUID id) {
+	   return roleDao.deleteRoleById(id);
+   }
+   //modify a role
+   public int upDateRoleById(UUID id , Role role) {
+	   return roleDao.upDateRoleById(id, role);
+   }
 }

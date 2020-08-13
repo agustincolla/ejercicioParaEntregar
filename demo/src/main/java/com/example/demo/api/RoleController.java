@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,5 +39,10 @@ public class RoleController {
 	@GetMapping(path="{roleId}")
 	public Role getRoleById(@PathVariable("roleId") UUID id) {
 		return roleService.getRoleByID(id).orElse(null);
+	}
+	//delete a role by id
+	@DeleteMapping(path="{roleId}")
+	public void deleteById(@PathVariable("roleId") UUID id) {
+		roleService.deleteRoleById(id);
 	}
 }
