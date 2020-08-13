@@ -38,10 +38,10 @@ public class ImplementationRoleDao implements RoleDao{
 	@Override
 	public int upDateRoleById(UUID id, Role role) {
 		// TODO Auto-generated method stub
-		return this.selectRoleById(id).map(p ->{
-			int indexToDelete = db.indexOf(role);
-			if(indexToDelete >= 0){
-				db.set(indexToDelete,role);
+		return this.selectRoleById(id).map(r ->{
+			int indexToUpDate = db.indexOf(r);
+			if(indexToUpDate >= 0){
+				db.set(indexToUpDate,new Role(id,role.getRoleName()));
 				return 1;
 			}
 			else {
