@@ -2,8 +2,11 @@ package com.example.demo.api;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +31,7 @@ public class RoleController {
 	}
 	//add a role
 	@PostMapping
-	public void addRole(@RequestBody Role role) {
+	public void addRole(@Valid @NonNull @NotBlank @RequestBody Role role) {
 		roleService.addRole(role);
 	}
 	//return all role
@@ -48,7 +51,7 @@ public class RoleController {
 	}
 	//modify a role by id
 	@PutMapping(path="{roleId}")
-	public void upDateRoleById(@PathVariable("roleId") UUID id,@RequestBody Role role) {
+	public void upDateRoleById(@PathVariable("roleId") UUID id,@Valid @NonNull @RequestBody Role role) {
 		roleService.upDateRoleById(id, role);
 	}
 }
