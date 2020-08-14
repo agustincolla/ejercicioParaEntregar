@@ -1,6 +1,6 @@
 package com.example.demo.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import com.example.demo.model.Role;
@@ -15,7 +15,7 @@ public interface RoleDao {
 		return insertRole(id, role);
 	}
 	//return all roles
-	ArrayList<Role> selectAllRole();
+	List<Role> selectAllRole();
 	//delete role
 	int deleteRoleById(UUID id);
 	//modify role

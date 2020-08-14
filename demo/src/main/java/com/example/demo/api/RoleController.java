@@ -1,10 +1,9 @@
 package com.example.demo.api;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,7 +35,7 @@ public class RoleController {
 	}
 	//return all role
 	@GetMapping
-	public ArrayList<Role> getAllRole(){
+	public List<Role> getAllRole(){
 		return roleService.getAllRole();
 	}
 	//get role by id

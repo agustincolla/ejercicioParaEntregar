@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -16,7 +16,7 @@ public class RoleService {
    private final RoleDao roleDao; 
    //roleServise constructor
    @Autowired
-   public RoleService(@Qualifier("firstDao") RoleDao roleDao) {
+   public RoleService(@Qualifier("postgres") RoleDao roleDao) {
 	super();
 	this.roleDao = roleDao;
    }
@@ -25,7 +25,7 @@ public class RoleService {
 	   return roleDao.insertRole(role);
    }
    //return all roles
-   public ArrayList<Role> getAllRole(){
+   public List<Role> getAllRole(){
 	   return roleDao.selectAllRole();
    }
    //return role by id

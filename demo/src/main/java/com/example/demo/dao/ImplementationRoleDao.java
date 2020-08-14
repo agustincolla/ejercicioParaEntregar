@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.stereotype.Repository;
@@ -10,7 +11,7 @@ import com.example.demo.model.Role;
 @Repository("firstDao")
 public class ImplementationRoleDao implements RoleDao{
     
-	private ArrayList<Role> db= new ArrayList<>();
+	private List<Role> db= new ArrayList<>();
 	@Override
 	//add a role
 	public int insertRole(UUID id, Role role) {
@@ -18,7 +19,7 @@ public class ImplementationRoleDao implements RoleDao{
 		return 1;
 	}
 	@Override
-	public ArrayList<Role> selectAllRole() {
+	public List<Role> selectAllRole() {
 		// TODO Auto-generated method stub
 		return db;
 	}
