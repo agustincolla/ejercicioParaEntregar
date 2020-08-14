@@ -1,0 +1,4 @@
+CREATE TABLE role(
+    id UUID NOT NULL PRIMARY KEY,
+    roleName VARCHAR(100) NOT NULL
+);
