@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import com.example.demo.model.Role;
 
 public class Person {
@@ -8,7 +10,7 @@ public class Person {
 	private String email=new String();
 	private String firstName=new String();
 	private String lastName=new String();
-	private ArrayList<Role> roles=new ArrayList<>();
+	private List<Role> roles=new ArrayList<>();
 	
 	//person constructor
 	public Person(String email, String firstName, String lastName, ArrayList<Role> roles) {
@@ -43,14 +45,14 @@ public class Person {
 		this.lastName = lastName;
 	}
 	//getter roles of person
-	public ArrayList<Role> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 	//setter role of person
 	public void setRoles(ArrayList<Role> roles) {
 		this.roles = roles;
 	}
-	//add a rol for a person
+	//add a role for a person
 	public void addRol(Role r) {
 		this.getRoles().add(r);
 	}
