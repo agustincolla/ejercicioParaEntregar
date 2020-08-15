@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Role;
 
-@Repository("firstDao")
+@Repository("firstRoleDao")
 public class ImplementationRoleDao implements RoleDao{
     
 	private List<Role> db= new ArrayList<>();
