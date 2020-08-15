@@ -36,7 +36,7 @@ public class RoleService {
    public int deleteRoleById(UUID id) {
 	   return roleDao.deleteRoleById(id);
    }
-   //modify a role
+   //modify a role by id
    public int upDateRoleById(UUID id , Role role) {
 	   return roleDao.upDateRoleById(id, role);
    }

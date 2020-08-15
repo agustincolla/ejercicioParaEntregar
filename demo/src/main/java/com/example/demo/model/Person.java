@@ -12,7 +12,7 @@ public class Person {
 	private List<String> roles=new ArrayList<>();
 	
 	//person constructor
-	public Person(String email, String firstName, String lastName, ArrayList<String> roles) {
+	public Person(String email, String firstName, String lastName, List<String> roles) {
 		super();
 		this.email = email;
 		this.firstName = firstName;

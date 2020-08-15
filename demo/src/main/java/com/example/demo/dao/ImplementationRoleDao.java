@@ -19,11 +19,13 @@ public class ImplementationRoleDao implements RoleDao{
 		return 1;
 	}
 	@Override
+	//select all roles
 	public List<Role> selectAllRole() {
 		// TODO Auto-generated method stub
 		return db;
 	}
 	@Override
+	//delete a role by id
 	public int deleteRoleById(UUID id) {
 		// TODO Auto-generated method stub
 		Optional<Role> role=this.selectRoleById(id);
@@ -37,6 +39,7 @@ public class ImplementationRoleDao implements RoleDao{
 		
 	}
 	@Override
+	//modify a role by id
 	public int upDateRoleById(UUID id, Role role) {
 		// TODO Auto-generated method stub
 		return this.selectRoleById(id).map(r ->{
@@ -51,6 +54,7 @@ public class ImplementationRoleDao implements RoleDao{
 		}).orElse(0);
 	}
 	@Override
+	//select role by id
 	public Optional<Role> selectRoleById(UUID id) {
 		// TODO Auto-generated method stub
 		return db.stream().filter(role -> role.getId().equals(id)).findFirst();

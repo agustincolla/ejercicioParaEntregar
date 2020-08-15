@@ -20,7 +20,7 @@ public interface PersonDao {
 		//delete person by id
 		int deletePersonById(UUID id);
 		//delete person by email
-		int deletePersonByEmial(String email);
+		int deletePersonByEmail(String email);
 		//modify person by id
 		int upDatePersonById(UUID id, Person person);
 		//modify person by email
@@ -28,5 +28,5 @@ public interface PersonDao {
 		//select a person by id
 		Optional<Person> selectPersonById(UUID id);
 		//select a person by email
-		Optional<Person> selectPersonByEmail(String mail);
+		Optional<Person> selectPersonByEmail(String email);
 }
