@@ -3,6 +3,8 @@ package com.example.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 public class Person {
 
@@ -12,7 +14,7 @@ public class Person {
 	private List<String> roles=new ArrayList<>();
 	
 	//person constructor
-	public Person(String email, String firstName, String lastName, List<String> roles) {
+	public Person(@JsonProperty("email")String email,@JsonProperty("personFirstName") String firstName,@JsonProperty("personLastName") String lastName,@JsonProperty("personRoles") List<String> roles) {
 		super();
 		this.email = email;
 		this.firstName = firstName;
