@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Role;
 
-@Repository("postgres")
+@Repository("postgresRole")
 public class PostgresRoleDao implements RoleDao{
 
 	private final JdbcTemplate jdbcTemplate;
@@ -21,6 +21,7 @@ public class PostgresRoleDao implements RoleDao{
 	}
 
 	@Override
+	//insert a role
 	public int insertRole(UUID id, Role role) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -30,31 +31,39 @@ public class PostgresRoleDao implements RoleDao{
 	//return all role
 	public List<Role> selectAllRole() {
 		// TODO Auto-generated method stub
-		final String query="SELECT id , roleName FROM role";
-		jdbcTemplate.query(query,(resultSet,i)->{
-			UUID id=UUID.fromString(resultSet.getString("id"));
+		final String query="SELECT roleId , roleName FROM role";
+		return jdbcTemplate.query(query,(resultSet,i)->{
+			UUID id=UUID.fromString(resultSet.getString("roleId"));
 			String roleName=resultSet.getString("roleName");
 			return new Role(id,roleName);
-			});
-		return  List.of(new Role(UUID.randomUUID(),"FROM POSTGRES DB"));
+			});	 
 	}
 
 	@Override
+	//delete a role by id
 	public int deleteRoleById(UUID id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
+	//modify role by id
 	public int upDateRoleById(UUID id, Role role) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
+	//return role by id
 	public Optional<Role> selectRoleById(UUID id) {
 		// TODO Auto-generated method stub
-		return null;
+		final String query="SELECT roleId , roleName FROM role WHERE roleId = ?";
+		Role role=jdbcTemplate.queryForObject(query,new Object[] {id},(resultSet,i)->{
+			UUID idOfRole=UUID.fromString(resultSet.getString("roleId"));
+			String roleName=resultSet.getString("roleName");
+			return new Role(idOfRole,roleName);
+			});	 
+		return Optional.ofNullable(role);
 	}
 
 }
