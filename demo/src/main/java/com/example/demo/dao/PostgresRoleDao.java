@@ -31,7 +31,7 @@ public class PostgresRoleDao implements RoleDao{
 	//return all role
 	public List<Role> selectAllRole() {
 		// TODO Auto-generated method stub
-		final String query="SELECT roleId , roleName FROM role";
+		final String query="SELECT roleId , roleName FROM role WHERE validRole = 0";
 		return jdbcTemplate.query(query,(resultSet,i)->{
 			UUID id=UUID.fromString(resultSet.getString("roleId"));
 			String roleName=resultSet.getString("roleName");
@@ -57,7 +57,7 @@ public class PostgresRoleDao implements RoleDao{
 	//return role by id
 	public Optional<Role> selectRoleById(UUID id) {
 		// TODO Auto-generated method stub
-		final String query="SELECT roleId , roleName FROM role WHERE roleId = ?";
+		final String query="SELECT roleId , roleName FROM role WHERE validRole = 0 AND roleId = ?";
 		Role role=jdbcTemplate.queryForObject(query,new Object[] {id},(resultSet,i)->{
 			UUID idOfRole=UUID.fromString(resultSet.getString("roleId"));
 			String roleName=resultSet.getString("roleName");
