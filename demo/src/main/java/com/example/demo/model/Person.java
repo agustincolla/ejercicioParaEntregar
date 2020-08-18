@@ -2,12 +2,13 @@ package com.example.demo.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class Person {
-
+    private UUID id=UUID.randomUUID();
 	private String email=new String();
 	private String firstName=new String();
 	private String lastName=new String();
@@ -20,6 +21,14 @@ public class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.roles = roles;
+	}
+	//getter id of person
+	public UUID getID() {
+		return id;
+	}
+	//setter id of person
+	public void setId(UUID id) {
+		this.id=id;
 	}
 	//getter email of person
 	public String getEmail() {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Role;
 
-@Repository("postgresRole")
+@Repository("postgresRoleDao")
 public class PostgresRoleDao implements RoleDao{
 
 	private final JdbcTemplate jdbcTemplate;

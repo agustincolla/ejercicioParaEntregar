@@ -16,7 +16,7 @@ public class RoleService {
    private final RoleDao roleDao; 
    //roleServise constructor
    @Autowired
-   public RoleService(@Qualifier("postgresRole") RoleDao roleDao) {
+   public RoleService(@Qualifier("postgresRoleDao") RoleDao roleDao) {
 	super();
 	this.roleDao = roleDao;
    }
