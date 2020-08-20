@@ -14,7 +14,7 @@ public class PersonService {
 
 	private final PersonDao personDao;
 
-	public PersonService(@Qualifier("postgresPersonDao")PersonDao personDao) {
+	public PersonService(@Qualifier("firstPersonDao")PersonDao personDao) {
 		super();
 		this.personDao = personDao;
 	}
